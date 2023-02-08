@@ -1,19 +1,36 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import Footer from "./Footer"
+import Footer from "./Footer";
 import Container from "@mui/material/Container";
 
 export const appName = "Sample App";
 
 import {
   AppBar,
+  Box,
+  Button,
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
 
-function Layout({ children }) {
+const navItems = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/jps",
+    label: "ジャパンサーチのウェブパーツ",
+  },
+];
 
+function Layout({ children }) {
   return (
     <div>
       <Head>
@@ -24,21 +41,18 @@ function Layout({ children }) {
           <Toolbar disableGutters>
             <Typography
               variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              ジャパンサーチのウェブパーツの使用例
+              Next.jsのテスト
             </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              {navItems.map((item) => (
+                <Button href={item.href} key={item.href} sx={{ color: '#fff' }}>
+                  {item.label}
+                </Button>
+              ))}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
