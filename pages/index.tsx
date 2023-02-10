@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
-import { Container } from "@mui/material";
+import { Container, ListItemButton, ListItemText } from "@mui/material";
 import Layout from "../components/Layout"; // 追記
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,16 @@ const Home: NextPage = () => {
           my: 5,
         }}
       >
-        <p>Next.jsのテストサイトです。</p>
+        <h1>Next.jsのテストサイトです。</h1>
+
+        <ul>
+          <li>
+            <Link href="/jps">ジャパンサーチのウェブパーツ</Link>
+          </li>
+          <li>
+            <Link href="/jps/iiif">ジャパンサーチの簡易Web API</Link>
+          </li>
+        </ul>
       </Container>
     </Layout>
   );

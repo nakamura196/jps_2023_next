@@ -10,11 +10,6 @@ import {
   AppBar,
   Box,
   Button,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -23,11 +18,7 @@ const navItems = [
   {
     href: "/",
     label: "Home",
-  },
-  {
-    href: "/jps",
-    label: "ジャパンサーチのウェブパーツ",
-  },
+  }
 ];
 
 function Layout({ children }) {
